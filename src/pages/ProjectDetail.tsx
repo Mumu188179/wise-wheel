@@ -2,6 +2,22 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Target, FileText, Image, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 
+// Import evidence images
+import project1Evidence from "@/assets/project1-evidence.png";
+import project2Evidence from "@/assets/project2-evidence.png";
+import project3Evidence from "@/assets/project3-evidence.png";
+import project4Evidence from "@/assets/project4-evidence.png";
+import project5Evidence from "@/assets/project5-evidence.png";
+import project6Evidence from "@/assets/project6-evidence.png";
+
+const evidenceImages: { [key: number]: string } = {
+  1: project1Evidence,
+  2: project2Evidence,
+  3: project3Evidence,
+  4: project4Evidence,
+  5: project5Evidence,
+  6: project6Evidence,
+};
 const projectsData = [
   {
     id: 1,
@@ -206,15 +222,18 @@ const ProjectDetail = () => {
                     ))}
                   </ul>
                   
-                  {/* Placeholder for actual evidence */}
-                  <div className="mt-6 p-8 rounded-xl border-2 border-dashed border-border bg-muted/30 text-center">
-                    <Image className="w-10 h-10 mx-auto mb-3 text-muted-foreground/50" />
-                    <p className="text-sm text-muted-foreground">
-                      Khu vực hiển thị ảnh/video minh chứng
-                    </p>
-                    <p className="text-xs text-muted-foreground/70 mt-1">
-                      (Thêm ảnh chụp màn hình, link file, hoặc embed video tại đây)
-                    </p>
+                  {/* Evidence Image */}
+                  <div className="mt-6 rounded-xl overflow-hidden border border-border">
+                    <img 
+                      src={evidenceImages[project.id]} 
+                      alt={`Minh chứng ${project.title}`}
+                      className="w-full h-auto"
+                    />
+                    <div className="p-3 bg-muted/30 text-center">
+                      <p className="text-sm text-muted-foreground">
+                        Ảnh minh họa cho bài tập {project.id}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
