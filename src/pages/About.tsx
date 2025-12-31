@@ -1,4 +1,4 @@
-import { Target, BookOpen, GraduationCap, Lightbulb, Search, Shield } from "lucide-react";
+import { Target, BookOpen, GraduationCap, Lightbulb, Search, Shield, Compass } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const About = () => {
@@ -91,46 +91,49 @@ const About = () => {
         </div>
       </section>
 
-      {/* Goals Section */}
+      {/* Learning Goals Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="section-title">Mục tiêu học tập & Định hướng phát triển</h2>
-              <p className="section-subtitle mx-auto mt-4">
-                Những điều tôi đang hướng đến trong hành trình học tập
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.1s" }}>
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Lightbulb className="w-7 h-7 text-primary" />
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Mục tiêu học tập */}
+              <div className="bg-card rounded-2xl border border-border p-8 card-hover animate-slide-up" style={{ animationDelay: "0.1s" }}>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <Lightbulb className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">Kiến thức nền tảng</h3>
-                <p className="text-sm text-muted-foreground">
-                  Nắm vững các kiến thức nền tảng về công nghệ số và AI
-                </p>
+                <h2 className="text-2xl font-semibold mb-4">Mục tiêu học tập</h2>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span>Nắm vững kiến thức nền tảng về công nghệ số và AI.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span>Phát triển kỹ năng tìm kiếm, đánh giá và xử lý thông tin học thuật.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span>Sử dụng các công cụ AI hỗ trợ học tập một cách hiệu quả và có trách nhiệm.</span>
+                  </li>
+                </ul>
               </div>
 
-              <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <Search className="w-7 h-7 text-accent" />
+              {/* Định hướng cá nhân */}
+              <div className="bg-card rounded-2xl border border-border p-8 card-hover animate-slide-up" style={{ animationDelay: "0.2s" }}>
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+                  <Compass className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">Tìm kiếm thông tin</h3>
-                <p className="text-sm text-muted-foreground">
-                  Biết cách tìm kiếm, đánh giá thông tin học thuật một cách chính xác
-                </p>
-              </div>
-
-              <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.3s" }}>
-                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-7 h-7 text-secondary-foreground" />
-                </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">AI có trách nhiệm</h3>
-                <p className="text-sm text-muted-foreground">
-                  Sử dụng AI như một công cụ hỗ trợ học tập có đạo đức và trách nhiệm
-                </p>
+                <h2 className="text-2xl font-semibold mb-4">Định hướng cá nhân</h2>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span>Xây dựng tư duy công nghệ phù hợp với thời đại số.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span>Chuẩn bị nền tảng cho các học phần chuyên sâu trong tương lai.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
