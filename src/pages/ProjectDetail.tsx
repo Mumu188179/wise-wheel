@@ -1,22 +1,59 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Target, FileText, Image, CheckCircle } from "lucide-react";
+import { ArrowLeft, Target, FileText, Image, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 
-// Import evidence images
-import bai1Evidence from "@/assets/bai1-evidence.jpg";
-import bai2Evidence from "@/assets/bai2-evidence.jpg";
-import bai3Evidence from "@/assets/bai3-evidence.jpg";
-import bai4Evidence from "@/assets/bai4-evidence.jpg";
-import bai5Evidence from "@/assets/bai5-evidence.jpg";
-import bai6Evidence from "@/assets/bai6-evidence.jpg";
+// Import evidence images for Bai 1
+import bai1Page1 from "@/assets/bai1/page1.jpg";
+import bai1Page2 from "@/assets/bai1/page2.jpg";
+import bai1Page3 from "@/assets/bai1/page3.jpg";
+import bai1Page4 from "@/assets/bai1/page4.jpg";
+import bai1Page5 from "@/assets/bai1/page5.jpg";
+import bai1Page6 from "@/assets/bai1/page6.jpg";
+import bai1Page7 from "@/assets/bai1/page7.jpg";
+import bai1Page8 from "@/assets/bai1/page8.jpg";
 
-const evidenceImages: { [key: number]: string } = {
-  1: bai1Evidence,
-  2: bai2Evidence,
-  3: bai3Evidence,
-  4: bai4Evidence,
-  5: bai5Evidence,
-  6: bai6Evidence,
+// Import evidence images for Bai 2
+import bai2Page1 from "@/assets/bai2/page1.jpg";
+import bai2Page2 from "@/assets/bai2/page2.jpg";
+import bai2Page3 from "@/assets/bai2/page3.jpg";
+import bai2Page4 from "@/assets/bai2/page4.jpg";
+import bai2Page5 from "@/assets/bai2/page5.jpg";
+import bai2Page6 from "@/assets/bai2/page6.jpg";
+
+// Import evidence images for Bai 3
+import bai3Page1 from "@/assets/bai3/page1.jpg";
+import bai3Page2 from "@/assets/bai3/page2.jpg";
+import bai3Page3 from "@/assets/bai3/page3.jpg";
+import bai3Page4 from "@/assets/bai3/page4.jpg";
+import bai3Page5 from "@/assets/bai3/page5.jpg";
+
+// Import evidence images for Bai 4
+import bai4Page1 from "@/assets/bai4/page1.jpg";
+import bai4Page2 from "@/assets/bai4/page2.jpg";
+import bai4Page3 from "@/assets/bai4/page3.jpg";
+
+// Import evidence images for Bai 5
+import bai5Page1 from "@/assets/bai5/page1.jpg";
+import bai5Page2 from "@/assets/bai5/page2.jpg";
+import bai5Page3 from "@/assets/bai5/page3.jpg";
+import bai5Page4 from "@/assets/bai5/page4.jpg";
+import bai5Page5 from "@/assets/bai5/page5.jpg";
+import bai5Page6 from "@/assets/bai5/page6.jpg";
+
+// Import evidence images for Bai 6
+import bai6Page1 from "@/assets/bai6/page1.jpg";
+import bai6Page2 from "@/assets/bai6/page2.jpg";
+import bai6Page3 from "@/assets/bai6/page3.jpg";
+import bai6Page4 from "@/assets/bai6/page4.jpg";
+
+const evidenceImages: { [key: number]: string[] } = {
+  1: [bai1Page1, bai1Page2, bai1Page3, bai1Page4, bai1Page5, bai1Page6, bai1Page7, bai1Page8],
+  2: [bai2Page1, bai2Page2, bai2Page3, bai2Page4, bai2Page5, bai2Page6],
+  3: [bai3Page1, bai3Page2, bai3Page3, bai3Page4, bai3Page5],
+  4: [bai4Page1, bai4Page2, bai4Page3],
+  5: [bai5Page1, bai5Page2, bai5Page3, bai5Page4, bai5Page5, bai5Page6],
+  6: [bai6Page1, bai6Page2, bai6Page3, bai6Page4],
 };
 
 const projectsData = [
@@ -135,6 +172,78 @@ const projectsData = [
   },
 ];
 
+const ImageGallery = ({ images, projectId }: { images: string[], projectId: number }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="mt-6">
+      <div className="relative rounded-xl overflow-hidden border border-border">
+        <img 
+          src={images[currentIndex]} 
+          alt={`Minh chứng trang ${currentIndex + 1}`}
+          className="w-full h-auto"
+        />
+        
+        {/* Navigation arrows */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </>
+        )}
+        
+        {/* Caption */}
+        <div className="p-3 bg-muted/30 text-center">
+          <p className="text-sm text-muted-foreground">
+            Trang {currentIndex + 1} / {images.length} - Bài tập {projectId}
+          </p>
+        </div>
+      </div>
+      
+      {/* Thumbnail navigation */}
+      {images.length > 1 && (
+        <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
+          {images.map((img, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                index === currentIndex 
+                  ? 'border-primary ring-2 ring-primary/20' 
+                  : 'border-border hover:border-primary/50'
+              }`}
+            >
+              <img 
+                src={img} 
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectsData.find((p) => p.id === Number(id));
@@ -151,6 +260,8 @@ const ProjectDetail = () => {
       </Layout>
     );
   }
+
+  const images = evidenceImages[project.id] || [];
 
   return (
     <Layout>
@@ -234,19 +345,10 @@ const ProjectDetail = () => {
                     ))}
                   </ul>
                   
-                  {/* Evidence Image */}
-                  <div className="mt-6 rounded-xl overflow-hidden border border-border">
-                    <img 
-                      src={evidenceImages[project.id]} 
-                      alt={`Minh chứng ${project.title}`}
-                      className="w-full h-auto"
-                    />
-                    <div className="p-3 bg-muted/30 text-center">
-                      <p className="text-sm text-muted-foreground">
-                        Ảnh minh chứng bài tập {project.id}
-                      </p>
-                    </div>
-                  </div>
+                  {/* Evidence Image Gallery */}
+                  {images.length > 0 && (
+                    <ImageGallery images={images} projectId={project.id} />
+                  )}
                 </div>
               </div>
             </div>
