@@ -1,4 +1,4 @@
-import { Target, BookOpen, Sparkles, GraduationCap, Code, Brain } from "lucide-react";
+import { Target, BookOpen, GraduationCap, Lightbulb, Search, Shield } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const About = () => {
@@ -30,10 +30,10 @@ const About = () => {
                 🎓 Năm nhất
               </span>
               <span className="px-4 py-2 rounded-full bg-accent/10 text-accent font-medium">
-                💻 Kỹ năng số
+                💻 Công nghệ số
               </span>
               <span className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground font-medium">
-                🤖 AI & Công nghệ
+                🤖 Trí tuệ nhân tạo
               </span>
             </div>
           </div>
@@ -75,26 +75,16 @@ const About = () => {
                 </ul>
               </div>
 
-              {/* Interests */}
+              {/* Introduction */}
               <div className="bg-card rounded-2xl border border-border p-8 card-hover animate-slide-up" style={{ animationDelay: "0.2s" }}>
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <Sparkles className="w-6 h-6 text-accent" />
+                  <BookOpen className="w-6 h-6 text-accent" />
                 </div>
-                <h2 className="font-serif text-2xl font-semibold mb-4">Sở thích</h2>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    Khám phá công nghệ mới
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    Lập trình và phát triển web
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    Đọc sách và học hỏi
-                  </li>
-                </ul>
+                <h2 className="font-serif text-2xl font-semibold mb-4">Giới thiệu bản thân</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Tôi là sinh viên năm nhất, hiện đang theo học học phần <strong className="text-foreground">Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</strong>. 
+                  Tôi có sự quan tâm đặc biệt đến công nghệ, trí tuệ nhân tạo và cách các công cụ số hỗ trợ hiệu quả cho học tập và làm việc trong thời đại số.
+                </p>
               </div>
             </div>
           </div>
@@ -106,7 +96,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="section-title">Mục tiêu & Định hướng</h2>
+              <h2 className="section-title">Mục tiêu học tập & Định hướng phát triển</h2>
               <p className="section-subtitle mx-auto mt-4">
                 Những điều tôi đang hướng đến trong hành trình học tập
               </p>
@@ -115,31 +105,31 @@ const About = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.1s" }}>
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-7 h-7 text-primary" />
+                  <Lightbulb className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">Học tập</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">Kiến thức nền tảng</h3>
                 <p className="text-sm text-muted-foreground">
-                  Nắm vững kiến thức kỹ năng số và ứng dụng trong học tập
+                  Nắm vững các kiến thức nền tảng về công nghệ số và AI
                 </p>
               </div>
 
               <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.2s" }}>
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-7 h-7 text-accent" />
+                  <Search className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">AI & Công nghệ</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">Tìm kiếm thông tin</h3>
                 <p className="text-sm text-muted-foreground">
-                  Sử dụng AI có trách nhiệm để nâng cao hiệu quả học tập
+                  Biết cách tìm kiếm, đánh giá thông tin học thuật một cách chính xác
                 </p>
               </div>
 
               <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover animate-slide-up" style={{ animationDelay: "0.3s" }}>
                 <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mx-auto mb-4">
-                  <Code className="w-7 h-7 text-secondary-foreground" />
+                  <Shield className="w-7 h-7 text-secondary-foreground" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">Phát triển</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">AI có trách nhiệm</h3>
                 <p className="text-sm text-muted-foreground">
-                  Xây dựng nền tảng vững chắc cho sự nghiệp tương lai
+                  Sử dụng AI như một công cụ hỗ trợ học tập có đạo đức và trách nhiệm
                 </p>
               </div>
             </div>
@@ -151,19 +141,30 @@ const About = () => {
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-card rounded-2xl border border-border p-8 md:p-12 text-center card-hover">
+            <div className="bg-card rounded-2xl border border-border p-8 md:p-12 card-hover">
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-6">
                 <Target className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-4">
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-6 text-center">
                 Mục tiêu của Portfolio
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Portfolio này được xây dựng nhằm tổng hợp và thể hiện kiến thức, kỹ năng số 
-                đã học được trong học phần. Đây là nơi lưu trữ các sản phẩm học tập, 
-                minh chứng cho quá trình phát triển kỹ năng sử dụng AI và công nghệ số 
-                một cách có trách nhiệm và sáng tạo.
+              <p className="text-muted-foreground mb-6 text-center">
+                Portfolio này được xây dựng nhằm:
               </p>
+              <ul className="space-y-4 text-muted-foreground max-w-xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Tổng hợp toàn bộ bài tập quan trọng của môn học.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Minh chứng quá trình học tập, tư duy và tiến bộ cá nhân.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Lưu trữ sản phẩm học tập để dễ dàng truy cập, chia sẻ và đánh giá.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
