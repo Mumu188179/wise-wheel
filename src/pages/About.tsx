@@ -58,6 +58,14 @@ const About = () => {
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span><strong className="text-foreground">MSV:</strong> 25050189</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span><strong className="text-foreground">Lớp:</strong> QH-2025-E Kinh tế 8</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary" />
                     <span><strong className="text-foreground">Ngành:</strong> Kinh tế Chính trị</span>
                   </li>
                   <li className="flex items-center gap-3">
