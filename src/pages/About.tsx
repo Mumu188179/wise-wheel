@@ -1,5 +1,6 @@
-import { Target, BookOpen, GraduationCap, Lightbulb, Search, Shield, Compass } from "lucide-react";
+import { Target, BookOpen, GraduationCap, Lightbulb, Compass } from "lucide-react";
 import Layout from "@/components/Layout";
+import avatarImage from "@/assets/avatar.jpg";
 
 const About = () => {
   return (
@@ -10,10 +11,12 @@ const About = () => {
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="max-w-4xl mx-auto text-center animate-slide-up">
             {/* Avatar */}
-            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
-              <span className="text-5xl md:text-6xl font-serif font-bold text-primary-foreground">
-                MH
-              </span>
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+              <img 
+                src={avatarImage} 
+                alt="Trần Mai Hương" 
+                className="w-full h-full object-cover"
+              />
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
